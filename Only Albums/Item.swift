@@ -9,10 +9,12 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item {
-    var timestamp: Date
-    
-    init(timestamp: Date) {
-        self.timestamp = timestamp
+final class HiddenAlbum {
+    @Attribute(.unique) var albumID: String
+    var hiddenAt: Date
+
+    init(albumID: String, hiddenAt: Date = Date()) {
+        self.albumID = albumID
+        self.hiddenAt = hiddenAt
     }
 }
